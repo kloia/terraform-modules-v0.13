@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "bucket" {
     id      = "lifecycle=${var.bucket_name}"
     enabled = var.is_lifecycle_enabled
 
-    prefix = ""
+    prefix = var.prefix
 
     transition {
       days          = var.short_storage_day
@@ -37,7 +37,7 @@ resource "aws_s3_bucket" "bucket" {
 }
 
 output "bucket_domain_name" {
-  value = aws_s3_bucket.bucket.bucket
+  value = var.bucket_name
 }
 
 

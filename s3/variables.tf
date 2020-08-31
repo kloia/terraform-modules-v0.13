@@ -31,7 +31,7 @@ variable "short_storage_day" {
 
 variable "long_storage_day" {
     type = string
-    default =  40
+    default =  90
 }
 
 variable "storage_class" {
@@ -51,4 +51,8 @@ variable "force_destroy" {
 variable "expiration" {
     default     = 90
 
+}
+
+variable "prefix" {
+    default = "/"
 }
