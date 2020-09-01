@@ -6,6 +6,6 @@ output "access_log_bucket_prefix" {
   value = var.access_logs_enabled ? local.bucket_prefix : ""
 }
 
-output "alb" {
+output "alb_resource" {
   value = var.internal ? aws_lb.alb-int : aws_lb.alb
 }

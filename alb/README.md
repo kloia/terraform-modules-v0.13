@@ -6,8 +6,8 @@ This module will create ALB for given config.
 
 ```hcl
 module "alb" {
-    source = "git::https://github.com/kloia/terraform-modules-v0.13//alb"
-    name   = "MyBasicALB"
+  source = "git::https://github.com/kloia/terraform-modules-v0.13//alb"
+  name   = "MyBasicALB"
 }
 ```
 
@@ -15,10 +15,10 @@ You can enable access logs by `access_logs_enabled` boolean variable. You can al
 
 ```hcl
 module "alb" {
-    source                 = "git::https://github.com/kloia/terraform-modules-v0.13//alb"
-    name                   = "MyBasicALB"
-    access_logs_enabled    = true
-    access_log_bucket_name = "my-access-logs" //if you don't pass this a bucket named tf-alb-module-(NAME)-(random 6 character long string) will be created
+  source                 = "git::https://github.com/kloia/terraform-modules-v0.13//alb"
+  name                   = "MyBasicALB"
+  access_logs_enabled    = true
+  access_log_bucket_name = "my-access-logs" //if you don't pass this a bucket named tf-alb-module-(NAME)-(random 6 character long string) will be created
 }
 ```
 
@@ -37,12 +37,12 @@ module "alb" {
 
 `tags`: A map of extra tags for each resource. (Name tags are present in each resource, no need to override.)
 
-else are same as aws_lb resource...
+else are same as the aws_lb resource variables...
 
 <h3>Output variables</h3>
 
-`access_log_bucket_prefix`: enabled if access logs are enabled.
+`access_log_bucket_prefix`: Enabled if access logs are enabled.
 
-`access_log_bucket_name`: enabled if access logs are enabled.
+`access_log_bucket_name`: Enabled if access logs are enabled.
 
-`alb-int`: whole alb resource is exported, you can use subelement.
+`alb_resource`: Whole alb resource is exported, you can use as subelement.
