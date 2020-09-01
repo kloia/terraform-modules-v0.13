@@ -39,3 +39,10 @@ module "alb" {
 
 else are same as aws_lb resource...
 
+<h3>Output variables</h3>
+
+`access_log_bucket_prefix`: enabled if access logs are enabled.
+
+`access_log_bucket_name`: enabled if access logs are enabled.
+
+`alb-int`: whole alb resource is exported, you can use subelement.

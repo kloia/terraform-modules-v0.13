@@ -1,6 +1,6 @@
 module "s3_bucket" {
   source               = "terraform-aws-modules/s3-bucket/aws"
-  create_bucket        = var.access_logs_enabled && length(var.access_log_bucket_name) && var.create_alb == 0 ? true : false
+  create_bucket        = var.access_logs_enabled && length(var.access_log_bucket_name) == 0 && var.create_alb == 0 ? true : false
   bucket               = local.bucket_name
   acl                  = "private"
   attach_public_policy = false

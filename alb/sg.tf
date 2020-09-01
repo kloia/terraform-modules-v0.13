@@ -27,7 +27,7 @@ resource "aws_security_group" "sg-alb" {
 resource "aws_security_group" "sg-alb-int" {
   name = "${var.name}-sg-alb-int"
   description = "Allow TLS inbound traffic from VPC."
-  vpc_id      = data.aws_vpc.alb_vpc
+  vpc_id      = data.aws_vpc.alb_vpc.id
   count       = var.internal && length(var.security_groups) == 0 && var.create_alb ? 1 : 0
 
   ingress {

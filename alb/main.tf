@@ -33,7 +33,7 @@ resource "aws_lb" "alb-int" {
   load_balancer_type = "application"
   security_groups    = length(var.subnets) == 0 ? [aws_security_group.sg-alb-int[0].id] : var.security_groups
   subnets            = var.subnets
-  count              = var.internal && var.create_lb ? 1 : 0
+  count              = var.internal && var.create_alb ? 1 : 0
   idle_timeout       = var.idle_timeout
   tags               = merge(var.tags, map("Name", var.name))
   ip_address_type    = "ipv4"
