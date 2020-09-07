@@ -22,10 +22,10 @@ module "s3_bucket" {
 }
 
 resource "aws_s3_bucket_policy" "s3-alb-pol" {
-  bucket = module.s3_bucket.this_s3_bucket_id
-  count  = var.access_logs_enabled && var.create_alb ? 1 : 0
+  bucket     = module.s3_bucket.this_s3_bucket_id
+  count      = var.access_logs_enabled && var.create_alb ? 1 : 0
   depends_on = [module.s3_bucket]
-  policy = <<POLICY
+  policy     = <<POLICY
 {
   "Id": "Policy",
   "Version": "2012-10-17",

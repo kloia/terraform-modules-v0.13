@@ -37,7 +37,7 @@ module "alb" {
 
 `tags`: A map of extra tags for each resource. (Name tags are present in each resource, no need to override.)
 
-else are same as the aws_lb resource variables...
+else are same as the `aws_lb` resource variables...
 
 <h3>Output variables</h3>
 
@@ -45,4 +45,4 @@ else are same as the aws_lb resource variables...
 
 `access_log_bucket_name`: Enabled if access logs are enabled.
 
-`alb_resource`: Whole alb resource is exported, you can use as subelement.
+`alb_resource`: Whole alb resource is exported, you can use as sub element.

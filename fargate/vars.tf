@@ -1,4 +1,4 @@
-variable "enabled" {
+variable "create_fargate" {
   description = "Create the Fargate cluster or not."
   type        = bool
   default     = true

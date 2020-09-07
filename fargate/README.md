@@ -11,7 +11,7 @@ module "fargate" {
 }
 ```
 
-- You can choose to create module or not by `enabled` boolean variable.
+- You can choose to create module or not by `create_fargate` boolean variable.
 
 - You can enable access container insights by `container_insights_enabled` boolean variable.
 
@@ -51,4 +51,4 @@ module "fargate" {
 
 `arn`: The Amazon Resource Name (ARN) that identifies the cluster.
 
-`fargate_cluster`: Whole fargate cluster resource is exported, you can use as subelement.
+`fargate_cluster`: Whole fargate cluster resource is exported, you can use as sub element.
