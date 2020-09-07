@@ -1,6 +1,6 @@
 resource "aws_ecs_cluster" "fargate" {
   name                = var.name
-  count               = var.enabled ? 1 : 0
+  count               = var.create_fargate ? 1 : 0
   capacity_providers  = var.spot_enabled ? ["FARGATE", "FARGATE_SPOT"] : ["FARGATE"]
   tags                = merge(var.tags, map("Name", var.name))
 
