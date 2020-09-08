@@ -69,8 +69,6 @@ module "lamdba" {
 
 `security_groups`: A list of security groups for the Lambda. (default is [])
 
-`enable_deletion_protection`: Enable deletion protection for the ALB. (default is false)
-
 `tags`: A map of extra tags for each resource. (Name tags are present in each resource, no need to override.)
 
 else are same as the `aws_lambda_function` resource variables...
